@@ -1,0 +1,30 @@
+apply plugin: 'com.android.application'
+
+android {
+    namespace 'com.googlecode.pythonforandroid'
+    compileSdkVersion 33
+
+    defaultConfig {
+        applicationId "com.googlecode.pythonforandroid"
+        minSdkVersion 21
+        targetSdkVersion 33
+        versionCode 26
+        versionName "r26"
+    }
+
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src']
+            res.srcDirs = ['res']
+            assets.srcDirs = ['assets']
+            jniLibs.srcDirs = ['libs', 'jni']
+        }
+    }
+}
+
+dependencies {
+    implementation project(':InterpreterForAndroid')
+    implementation project(':Common')
+    implementation project(':Utils')
+}

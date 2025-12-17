@@ -1,0 +1,29 @@
+apply plugin: 'com.android.library'
+
+android {
+    namespace 'com.googlecode.android_scripting.scriptinglayer'
+    compileSdkVersion 33
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 33
+    }
+
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src']
+            res.srcDirs = ['res']
+        }
+    }
+}
+
+dependencies {
+    implementation project(':Common')
+    implementation project(':Utils')
+    implementation project(':BluetoothFacade')
+    implementation project(':SignalStrengthFacade')
+    implementation project(':TextToSpeechFacade')
+    implementation project(':WebCamFacade')
+    implementation 'com.google.guava:guava:31.1-android'
+}

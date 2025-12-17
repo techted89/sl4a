@@ -1,0 +1,24 @@
+apply plugin: 'com.android.library'
+
+android {
+    namespace 'com.googlecode.android_scripting.facade.bluetooth'
+    compileSdkVersion 33
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 33
+    }
+
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src']
+            res.srcDirs = ['res']
+        }
+    }
+}
+
+dependencies {
+    implementation project(':Utils')
+    implementation project(':Common')
+}

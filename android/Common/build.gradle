@@ -1,0 +1,26 @@
+apply plugin: 'com.android.library'
+
+android {
+    namespace 'com.googlecode.android_scripting.common'
+    compileSdkVersion 33
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 33
+    }
+
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src']
+            res.srcDirs = ['res']
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+
+dependencies {
+    implementation project(':Utils')
+    implementation 'com.google.guava:guava:31.1-android'
+    implementation files('libs/libGoogleAnalytics.jar')
+}

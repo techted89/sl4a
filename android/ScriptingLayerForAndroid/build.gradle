@@ -1,0 +1,39 @@
+apply plugin: 'com.android.application'
+
+android {
+    namespace 'com.googlecode.android_scripting'
+    compileSdkVersion 33
+
+    defaultConfig {
+        applicationId "com.googlecode.android_scripting"
+        minSdkVersion 21
+        targetSdkVersion 33
+        versionCode 603
+        versionName "6x03"
+    }
+
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src']
+            res.srcDirs = ['res']
+            assets.srcDirs = ['assets']
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+
+dependencies {
+    implementation project(':Common')
+    implementation project(':Utils')
+    implementation project(':ScriptingLayer')
+    implementation project(':InterpreterForAndroid')
+    implementation project(':BluetoothFacade')
+    implementation project(':SignalStrengthFacade')
+    implementation project(':TextToSpeechFacade')
+    implementation project(':WebCamFacade')
+    implementation project(':QuickAction')
+
+    implementation files('libs/locale_platform.jar')
+    implementation 'com.google.guava:guava:31.1-android'
+}

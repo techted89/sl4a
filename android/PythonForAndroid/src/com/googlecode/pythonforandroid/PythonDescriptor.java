@@ -34,11 +34,6 @@ public class PythonDescriptor extends Sl4aHostedInterpreter {
   private static final String ENV_TEMP = "TEMP";
   private static final String ENV_LD = "LD_LIBRARY_PATH";
 
-  @Override
-  public String getBaseInstallUrl() { // TODO: Change back to standard path for official release
-    return "http://www.mithril.com.au/android/"; // This is for testing only.
-  }
-
   public String getExtension() {
     return ".py";
   }
